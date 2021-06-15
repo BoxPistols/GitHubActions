@@ -111,13 +111,13 @@ export const actions = {
     }
   },
   // FireStoreの要素を削除する
-  // async removeDB(context, removeId) {
-  //   await context.commit('remove', removeId)
-  //   const db = this.$fire.firestore.collection('markdowns').doc(removeId)
-  //   try {
-  //     db.delete()
-  //   } catch (e) {
-  //     alert(e)
-  //   }
-  // },
+  async removeDB(context, removeId) {
+    await context.commit('remove', removeId)
+    const db = this.$fire.firestore.collection('markdowns').doc(removeId)
+    try {
+      db.delete()
+    } catch (e) {
+      alert(e)
+    }
+  },
 }
